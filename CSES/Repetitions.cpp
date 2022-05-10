@@ -1,24 +1,27 @@
-#include <iostream>
- 
+#include <bits/stdc++.h>
+
 using namespace std;
- 
+
 int main()
 {
-   string str;
-   cin >> str;
-   char p = str[0];
-   int max = 0;
-   int len = 1;
-   for (int i = 1; i < str.length(); i++) {
-      if (str[i] == p) len++;
-      else {
-         if (len > max) max = len;
-         len = 1;
-      }
-      p = str[i];
-   }
-   if (len > max) max = len;
- 
-   cout << max;
-   return 0;
+    string s;
+    cin >> s;
+    int res = 1, cur = 1;
+
+    for (int i = 1; i < s.length(); i++)
+    {
+        if (s[i] == s[i-1])
+        {
+            if (++cur > res)
+                res = cur;
+        }
+        else 
+        {
+            cur = 1;
+        }
+    }
+
+    cout << res << endl;
+
+    return 0;
 }
