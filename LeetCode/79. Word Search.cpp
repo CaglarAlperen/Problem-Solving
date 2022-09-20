@@ -5,6 +5,7 @@ public:
         if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size() 
             || board[i][j] != word[len] || board[i][j] == '*')
             return false;
+            
         len++;
         if (len == word.length())
             return true;
